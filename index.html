@@ -1,44 +1,33 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#111827">
-  <title>Computer Quest — Zero to Hero</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070b1b"><meta name="description" content="Computer Quest — learn computers from zero to hero.">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="styles.css">
+<title>Computer Quest — Zero to Hero</title>
 </head>
 <body>
-  <header class="topbar">
-    <div><p class="eyebrow">YOUR LEARNING ADVENTURE</p><h1>⚡ Computer Quest</h1></div>
-    <div class="level" id="level">LEVEL 1</div>
-  </header>
-  <main>
-    <section class="welcome card">
-      <div><p class="eyebrow">WELCOME, EXPLORER</p><h2>From zero to hero.</h2>
-      <p>Learn computers one small mission at a time.</p></div>
-      <div class="hero-icon">🧑‍💻</div>
-    </section>
-    <section class="stats">
-      <article class="card stat"><span>⭐ Total XP</span><strong id="xp">0</strong></article>
-      <article class="card stat"><span>🏆 Missions done</span><strong id="done">0</strong></article>
-      <article class="card stat"><span>🔥 Current streak</span><strong id="streak">1 day</strong></article>
-    </section>
-    <section class="section-head"><div><p class="eyebrow">YOUR JOURNEY</p><h2>Today's missions</h2></div><span class="chip">LEVEL 1</span></section>
-    <section id="missions" class="missions"></section>
-    <section class="card progress-card"><div class="progress-title"><h3>Level progress</h3><b id="progress-label">0 / 100 XP</b></div><div class="progress"><span id="progress-bar"></span></div><p class="muted">Earn XP by completing lessons and quizzes.</p></section>
-    <section class="section-head"><div><p class="eyebrow">COLLECTION</p><h2>Your badges</h2></div></section>
-    <section class="badges" id="badges"></section>
-  </main>
-  <nav class="bottom-nav"><a class="active" href="#missions">🏠<small>Home</small></a><a href="#missions">🎯<small>Missions</small></a><a href="#badges">🏅<small>Badges</small></a></nav>
-  <dialog id="lesson">
-    <form method="dialog"><button class="close" aria-label="Close">✕</button></form>
-    <p class="eyebrow" id="lesson-tag">MISSION</p><h2 id="lesson-title"></h2>
-    <p id="lesson-body"></p><div id="quiz"></div>
-    <p class="feedback" id="feedback"></p>
-    <button id="complete" class="primary" disabled>Complete mission · +25 XP</button>
-  </dialog>
-  <script src="app.js"></script>
-</body>
-</html>
+<header class="topbar">
+ <a class="brand" href="#"><span class="brand-icon">⚡</span><span>COMPUTER <b>QUEST</b><small>ZERO TO HERO</small></span></a>
+ <div class="top-right"><span class="xp">⭐ <b id="xp">0</b> XP</span><span class="level">LV <b id="level">1</b></span></div>
+</header>
+<main class="wrap">
+ <section class="hero">
+  <img class="hero-art" src="hero.png" alt="Futuristic Computer Quest learning hero artwork">
+  <div class="hero-shade"></div>
+  <div class="hero-content"><span class="eyebrow">YOUR LEARNING ADVENTURE STARTS HERE</span><h1>Computer<br><em>Quest</em></h1><p>Learn · Explore · Level Up</p><a href="#journey" class="cta">Start your journey <span>→</span></a></div>
+ </section>
+ <section class="welcome panel">
+  <div class="level-badge">LV<br><strong id="badgeLevel">1</strong></div>
+  <div class="welcome-text"><span class="eyebrow">WELCOME, EXPLORER!</span><h2>From zero to hero.</h2><p>सीखो, अभ्यास करो और अपनी skills को level up करो।</p></div>
+  <div class="xp-progress"><b><span id="xpNow">0</span> / 100 XP</b><div class="track"><i id="xpBar"></i></div><small id="doneText">0 of 6 missions complete</small></div>
+ </section>
+ <section class="section-title"><div><span class="eyebrow">YOUR ROADMAP</span><h2 id="journey">Today's missions</h2></div><label class="language">🌐 <select id="language"><option value="both">Hindi + English</option><option value="hi">हिन्दी</option><option value="en">English</option></select></label></section>
+ <section class="mission-grid" id="missions"></section>
+ <section class="challenge panel"><div class="brain">🧠</div><div class="challenge-copy"><span class="eyebrow">BRAIN BOOSTER</span><h2>Quick knowledge check</h2><p>Answer a few questions and earn bonus XP.</p></div><button id="quizBtn" class="cta">Take the quiz →</button></section>
+ <section id="quizArea" class="quiz panel" hidden></section>
+ <nav class="bottom-nav"><a class="active" href="#">⌂<small>Home</small></a><a href="#journey">▤<small>Lessons</small></a><a href="#quizArea" id="quizNav">♧<small>Quiz</small></a><a href="#journey">▥<small>Progress</small></a></nav>
+ <footer>⚡ COMPUTER QUEST <span>Keep learning. Keep leveling up.</span></footer>
+</main>
+<script src="app.js"></script>
+</body></html>

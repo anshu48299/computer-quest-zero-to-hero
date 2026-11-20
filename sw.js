@@ -1,5 +1,1 @@
-const CACHE="computer-quest-v1";
-const FILES=["./","./index.html","./styles.css","./app.js","./manifest.json","./icon.svg"];
-self.addEventListener("install",e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES))));
-self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));
-self.addEventListener("fetch",e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));
+const CACHE='cq-premium-v1';const FILES=['./','./index.html','./styles.css','./app.js','./manifest.json','./icon.svg','./hero.png'];self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES))));self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(a=>Promise.all(a.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));self.addEventListener('fetch',e=>{if(e.request.method==='GET')e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(v=>{let copy=v.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return v}).catch(()=>caches.match('./index.html'))))});
