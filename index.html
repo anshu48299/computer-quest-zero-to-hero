@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>Computer Quest — Zero to Hero</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><p class="eyebrow">YOUR LEARNING ADVENTURE</p><h1>⚡ Computer Quest</h1></div>
+    <div class="level" id="level">LEVEL 1</div>
+  </header>
+  <main>
+    <section class="welcome card">
+      <div><p class="eyebrow">WELCOME, EXPLORER</p><h2>From zero to hero.</h2>
+      <p>Learn computers one small mission at a time.</p></div>
+      <div class="hero-icon">🧑‍💻</div>
+    </section>
+    <section class="stats">
+      <article class="card stat"><span>⭐ Total XP</span><strong id="xp">0</strong></article>
+      <article class="card stat"><span>🏆 Missions done</span><strong id="done">0</strong></article>
+      <article class="card stat"><span>🔥 Current streak</span><strong id="streak">1 day</strong></article>
+    </section>
+    <section class="section-head"><div><p class="eyebrow">YOUR JOURNEY</p><h2>Today's missions</h2></div><span class="chip">LEVEL 1</span></section>
+    <section id="missions" class="missions"></section>
+    <section class="card progress-card"><div class="progress-title"><h3>Level progress</h3><b id="progress-label">0 / 100 XP</b></div><div class="progress"><span id="progress-bar"></span></div><p class="muted">Earn XP by completing lessons and quizzes.</p></section>
+    <section class="section-head"><div><p class="eyebrow">COLLECTION</p><h2>Your badges</h2></div></section>
+    <section class="badges" id="badges"></section>
+  </main>
+  <nav class="bottom-nav"><a class="active" href="#missions">🏠<small>Home</small></a><a href="#missions">🎯<small>Missions</small></a><a href="#badges">🏅<small>Badges</small></a></nav>
+  <dialog id="lesson">
+    <form method="dialog"><button class="close" aria-label="Close">✕</button></form>
+    <p class="eyebrow" id="lesson-tag">MISSION</p><h2 id="lesson-title"></h2>
+    <p id="lesson-body"></p><div id="quiz"></div>
+    <p class="feedback" id="feedback"></p>
+    <button id="complete" class="primary" disabled>Complete mission · +25 XP</button>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "Computer Quest — Zero to Hero",
+  "short_name": "Computer Quest",
+  "description": "Learn computer basics through fun missions and quizzes.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b1120",
+  "theme_color": "#111827",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
